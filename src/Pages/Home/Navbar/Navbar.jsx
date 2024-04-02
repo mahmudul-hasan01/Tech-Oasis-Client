@@ -1,9 +1,14 @@
 import { navLink } from "./NavLink";
 import image from '../../../assets/image/Phone/EoY-2022-Best-Phones-on-leather.jpg'
 import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
+import { CgProfile } from "react-icons/cg";
+
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useAuth()
     return (
         <div>
             <div className="navbar bg-white fixed z-50 max-w-screen-xl">
@@ -26,21 +31,41 @@ const Navbar = () => {
                     </div>
                     {/* dropdown */}
                     <div className="dropdown dropdown-bottom dropdown-end hidden lg:block">
-                        <img className="w-[50px] h-[50px] rounded-full " tabIndex={0} role="button" src={image} alt="" />
+                       {
+                        user ? <img className=" w-12 h-12 rounded-full cursor-pointer" tabIndex={0} role="button" src={user?.photoURL} alt="" /> : <CgProfile tabIndex={0} role="button" className="text-5xl cursor-pointer" /> 
+                       }
                         {/* <div  className="btn m-1">Click</div> */}
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <Link
-                                to='/login'
-                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
-                            >
-                                Login
-                            </Link>
-                            <Link
-                                to='/signup'
-                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
-                            >
-                                Sign Up
-                            </Link>
+                            {
+                                user ?
+                                    <>
+                                        <Link
+                                            to='/login'
+                                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        >
+                                            Dashoard
+                                        </Link>
+                                        <p onClick={() => logOut()} className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        >
+                                            Logout
+                                        </p>
+                                    </>
+                                    :
+                                    <>
+                                        <Link
+                                            to='/login'
+                                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        >
+                                            Login
+                                        </Link>
+                                        <Link
+                                            to='/signup'
+                                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </>
+                            }
                         </ul>
                     </div>
                 </div>
