@@ -20,14 +20,12 @@ const SignUp = () => {
 
     const onSubmit = async (data) => {
         await createUser(data?.email, data?.password)
-        // const userInfo = {
-        //     name: data?.name,
-        //     email: data?.email,
-        // }
-        // axiosPublic.post('/users', userInfo)
-        //     .then(res => {
-        //         console.log(res?.data);
-        //     })
+        const userInfo = {
+            name: data?.name,
+            email: data?.email,
+        }
+        await axiosPublic.post('/users', userInfo)
+            
 
 
         const imageFile = { image: data.image[0] }
