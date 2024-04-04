@@ -9,6 +9,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useState } from "react";
 import Paginations from "./Paginations";
 import icon from '../../assets/image/Eid/images.png'
+import { Link } from "react-router-dom";
 // import pagination from "./Pagination";
 
 
@@ -38,7 +39,6 @@ const Shop = () => {
         }
     })
     const currentPost = data?.slice(firstPostIndex, lastPostIndex)
-    // console.log(currentPost);
 
 
     return (
@@ -62,7 +62,7 @@ const Shop = () => {
 
             <div className="grid grid-cols-3">
                 {
-                    currentPost?.map(phone => <div key={phone.id} className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white">
+                    currentPost?.map(phone => <div key={phone._id} className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white">
                         <div className="flex justify-center w-full h-48 lg:h-[280px] relative">
                             <img className="rounded-lg bg-black/40 w-[200px] h-full" src={phone.image} />
                         </div>

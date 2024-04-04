@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import { useState } from "react";
 import toast from "react-hot-toast";
 
 const AddPhone = () => {
@@ -94,12 +93,19 @@ const AddPhone = () => {
                             </div>
                             <select {...register("category")} defaultValue={'default'} className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select a category</option>
-                                <option value="Phone">Phone</option>
-                                <option value="TV & Monitors">TV & Monitors</option>
-                                <option value="Watchs">Watchs</option>
+                                <option value="Phone">Laptop</option>
+                                <option value="TV & Monitors">Mobiles & Tabs</option>
+                                <option value="Watchs">Smart Watch</option>
                                 <option value="Computer & PC">Computer & PC</option>
-                                <option value="Smart Gadgets">Smart Gadgets</option>
+                                <option value="Smart Gadgets">Wired Earphone</option>
+                                <option value="Smart Gadgets">Speakers</option>
                                 <option value="Smart Gadgets">Power Cable</option>
+                                <option value="Smart Gadgets">Powerbank</option>
+                                <option value="Smart Gadgets">Neckband</option>
+                                <option value="Smart Gadgets">Power Adapter</option>
+                                <option value="Smart Gadgets">Hubs & Docks</option>
+                                <option value="Smart Gadgets">Wireless Headset</option>
+                                <option value="Smart Gadgets">Backpack</option>
 
                             </select>
 
