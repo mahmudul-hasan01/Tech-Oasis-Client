@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import Phone from "../../../Components/Phone/Phone";
 
 export const navLink =  <>
             <NavLink
@@ -26,30 +25,7 @@ export const navLink =  <>
             >
                 Shop Now
             </NavLink>
-            <NavLink
-                to="/upcoming"
-                className={({ isActive, isPending, isTransitioning }) =>
-                    [
-                        isPending ? "pending" : "",
-                        isActive ? "underline" : "",
-                        isTransitioning ? "transitioning" : "",
-                    ].join(" ")
-                }
-            >
-                Upcoming
-            </NavLink>
-            <NavLink
-                to="/phone"
-                className={({ isActive, isPending, isTransitioning }) =>
-                    [
-                        isPending ? "pending" : "",
-                        isActive ? "underline" : "",
-                        isTransitioning ? "transitioning" : "",
-                    ].join(" ")
-                }
-            >
-               Phone
-            </NavLink>
+            
             <NavLink
                 to="/addPhone"
                 className={({ isActive, isPending, isTransitioning }) =>
@@ -62,5 +38,4 @@ export const navLink =  <>
             >
                 Add Phone
             </NavLink>
-            {/* <Phone></Phone> */}
         </>

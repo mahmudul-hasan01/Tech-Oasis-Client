@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "name": "QCY H3 Hybrid ANC Wireless Headphones",
+      "price": 3590,
+      "status": "in stock",
+      "image": "https://i.ibb.co/YBsJYWt/V6-Zi-Wul-Ub-B49-Fa-Ja-Ej-Babr-HPZc-BEx-M70ds-E0o-XVO.webp",
+      "features": ["The QCY H3 Hybrid ANC Wireless Headphones redefine the audio experience with cutting-edge technology, offering a perfect blend of adaptive noise cancellation and audio compensation. Incorporating the innovative Bimodal Ear Canal Adaptive Technology."]
+    },
+    {
+      "id": 2,
+      "name": "XTRA Active R28 Bluetooth Calling Sports Smartwatch",
+      "price": 3799,
+      "status": "in stock",
+      "image": "https://i.ibb.co/MMsrhMZ/s2sn5t7-R1pd17-GJ9-CWPB3asjwu-L99hm18kx-TZCem-1.png",
+      "features": ["Water Proof IP68 | Display Size: 1.45 | 47*12.5*22mm |  Sports Rugged Build Quality | HD Display"]
+    },
+    {
+      "id": 3,
+      "name": "XTRA Active R16 1.39 BT Calling Smart Watch",
+      "price": 2999,
+      "status": "in stock",
+      "image": "https://i.ibb.co/yYng9BV/79j-YEnpg-UR1-DTBowmd-Eb-Vsy-Be-FOVs-I1dh-Khe3ea-E.png",
+      "features": ["Feature 2", "Feature 3", "Feature 6"]
+    },
+    {
+      "id": 4,
+      "name": "Zeblaze GTR 3 Pro Amoled Display Smart Watch",
+      "price": 3150,
+      "status": "in stock",
+      "image": "https://i.ibb.co/dL3xWTp/5uwf-CMa-DEPk3-NZp-TYt0co-GKS64m-K9muko-Nibsw-TJ.jpg",
+      "features": ["Feature 4", "Feature 5", "Feature 7"]
+    },
+    {
+      "id": 5,
+      "name": "Amazfit GTS 2",
+      "price": 10299,
+      "status": "in stock",
+      "image": "https://i.ibb.co/5vHfh9J/dy3y-Ie-J11o5-ZHwqpwb8-ST91-B3d-E8-Ovogmn6cnx-RV.webp",
+      "features": ["Feature 3", "Feature 6", "Feature 8"]
+    },
+    {
+      "id": 6,
+      "name": "WS91 Max Smartwatch",
+      "price": 1650,
+      "status": "in stock",
+      "image": "https://i.ibb.co/KzMyTtn/OXjaylzvkg-Ugq-W1t-QLLm3-Etb5o-Ka-KNDa-Horgte-No.png",
+      "features": ["Feature 1", "Feature 7", "Feature 9"]
+    },
+    {
+      "id": 7,
+      "name": "Zeblaze GTS 3 Pro Smart Watch",
+      "price": 2799,
+      "status": "in stock",
+      "image": "https://i.ibb.co/qY1H377/ABs-J9-Uu-ALMP9-QN3-Osao-KBz-VKurq-LVsd-ZKir-Gn-Jat.jpg",
+      "features": ["Feature 2", "Feature 5", "Feature 10"]
+    }
+  ]
+  

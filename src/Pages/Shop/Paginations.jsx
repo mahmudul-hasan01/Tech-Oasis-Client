@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 
-import "./Pagination.css";
-
 const Pagination = ({
     totalPosts,
     postsPerPage,
@@ -20,7 +18,7 @@ const Pagination = ({
                     <button
                         key={index}
                         onClick={() => setCurrentPage(page)}
-                        className={`btn text-xl font-semibold ${page == currentPage ? "text-red-400" : ""}`}>
+                        className={`btn text-xl font-semibold ${page == currentPage ? "text-sky-500" : ""}`}>
                         {page}
                     </button>
                 );

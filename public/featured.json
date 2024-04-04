@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "image": "https://i.ibb.co/TM4F3MY/mt-Ys-HRBj-BVho-PEZSUn-FWh5fi-HSv-OFQ1-Wy-QAYf-Y1z.png"
+    },
+    {
+        "id": 11,
+        "name": "Mobiles & Tabs",
+        "image": "https://i.ibb.co/NZ7p2XS/o-VZVq51-Ce-S4m-H6jo7qkv-Cq-U25s-Gbh-Jypk-CLHi-F7-G.png"
+    },
+    {
+        "id": 2,
+        "name": "Smartwatch",
+        "image": "https://i.ibb.co/vL0Rs45/Wb2l4-KYQ8-W2-IGWNRo-GOk3-Ei-Pi-Cl-ODr-PYrh-FT6y-L8.png"
+    },
+    {
+        "id": 3,
+        "name": "Wired Earphone",
+        "image": "https://i.ibb.co/6ws2MMB/f-NVx-PITCo-I9-Wfh8-MASobr-NFHCs-Iqb-VVdx5u-Ao-EGd.png"
+    },
+    {
+        "id": 4,
+        "name": "Speakers",
+        "image": "https://i.ibb.co/bbZRswg/c6-EH44-EUq-TY8-A6-WDe5t-Se-Lx-FYkyuy-Bag92dp-Ys-C1.png"
+    },
+    {
+        "id": 5,
+        "name": "Power Cable",
+        "image": "https://i.ibb.co/2srWZrs/RGq-OMfzy-SZV24hy0gg3z-Ij7g-JK7-Oj-DT04-Ps-XHr-WP.png"
+    },
+    {
+        "id": 6,
+        "name": "Powerbank",
+        "image": "https://i.ibb.co/7nr215v/Rsx-UVMNVnf-ON5ibm0j5sw-Az-Oy-Cgx-Lyf-Yoyj0d8-T1.png"
+    },
+    {
+        "id": 7,
+        "name": "Neckband",
+        "image": "https://i.ibb.co/XZNfVMN/ky16-S0o-YJBj-IZbtj-ZU7411-Bnx-Cs9e-P9-Fa-QH0-SQR0.png"
+    },
+    {
+        "id": 8,
+        "name": "Power Adapter",
+        "image": "https://i.ibb.co/tpzpz5g/vu60-GEXQ1o27-Vw-VVag6x2-Rch24x7ad-Tp-Sq-Rskg-Nw.png"
+    },
+    {
+        "id": 9,
+        "name": "Hubs & Docks",
+        "image": "https://i.ibb.co/99f2J0b/0-ZPl-BF1-Ft-WUqdabac9-Pf-YXWy-IZA0q1-Q4hbw-Qy-Qg4-1.png"
+    },
+    {
+        "id": 10,
+        "name": "Wireless Headset",
+        "image": "https://i.ibb.co/BNwFvDf/62b7c-TNmidv-Vtvnxgcd-Skpx-Lw920s-B4-M74-A9zu6-I.png"
+    },
+    {
+        "id": 12,
+        "name": "Backpack",
+        "image": "https://i.ibb.co/9TyRpQc/Udgv-Yho-I3-Wa-W8-Dzo-ML3m-YDZVT2e-UDoa-Dvt6hh-Fvx.png"
+    }
+]

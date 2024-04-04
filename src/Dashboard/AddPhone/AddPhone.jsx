@@ -32,11 +32,7 @@ const AddPhone = () => {
                 distributorName: user.displayName ? user.displayName : 'Null',
                 distributorEmail: user.email,
                 category: data?.category,
-                // ingredients: data?.ingredients,
                 rating: data?.rating,
-                // time: data?.time,
-                // like: data?.like,
-                // reviews: data?.reviews,
                 price: parseFloat(data?.price),
                 datails: data?.datails,
                 image: res?.data?.data?.display_url
@@ -64,7 +60,6 @@ const AddPhone = () => {
 
     return (
         <div>
-            {/* <SectionTitle subHeading={'What"s New'} heading={'Add an item'}></SectionTitle> */}
             <div>
 
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -89,14 +84,6 @@ const AddPhone = () => {
 
                         </label>
 
-                        {/* <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Ingredients*</span>
-                            </div>
-                            <input {...register("ingredients")} type="text" placeholder="Ingredients" className="input input-bordered w-full" />
-
-                        </label> */}
-
                     </div>
 
                     <div className="flex gap-5">
@@ -112,6 +99,7 @@ const AddPhone = () => {
                                 <option value="Watchs">Watchs</option>
                                 <option value="Computer & PC">Computer & PC</option>
                                 <option value="Smart Gadgets">Smart Gadgets</option>
+                                <option value="Smart Gadgets">Power Cable</option>
 
                             </select>
 
