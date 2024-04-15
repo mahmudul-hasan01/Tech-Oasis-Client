@@ -9,6 +9,7 @@ import FeaturedAllCart from "../Pages/Home/FeaturedCategories/FeaturedAllCart";
 import UpdateItem from "../Dashboard/Admin/UpdateItem";
 import Dashboard from "../Dashboard/Dashboard";
 import ManageItem from "../Dashboard/Admin/ManageItem";
+import AllUsers from "../Dashboard/Admin/AllUsers";
 
 
 export const router = createBrowserRouter([
@@ -42,10 +43,15 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <Dashboard></Dashboard>,
         children: [
+            // Admin
             {
                 path: 'manageItems',
                 element: <ManageItem></ManageItem>
-            }
+            },
+            {
+                path: 'allUsers',
+                element: <AllUsers></AllUsers>
+            },
         ]
     },
 

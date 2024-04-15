@@ -25,14 +25,14 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu gap-5 font-semibold menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu gap-5 -right-10 font-semibold menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {navLink}
                         </ul>
                     </div>
                     {/* dropdown */}
-                    <div className="dropdown dropdown-bottom dropdown-end hidden lg:block">
+                    <div className="dropdown dropdown-bottom dropdown-end ">
                        {
-                        user ? <img className=" w-12 h-12 rounded-full cursor-pointer" tabIndex={0} role="button" src={user?.photoURL} alt="" /> : <CgProfile tabIndex={0} role="button" className="text-5xl cursor-pointer" /> 
+                        user?.photoURL ? <img className=" w-12 h-12 rounded-full cursor-pointer" tabIndex={0} role="button" src={user?.photoURL} alt="" /> : <CgProfile tabIndex={0} role="button" className="text-5xl cursor-pointer" /> 
                        }
                         {/* <div  className="btn m-1">Click</div> */}
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
