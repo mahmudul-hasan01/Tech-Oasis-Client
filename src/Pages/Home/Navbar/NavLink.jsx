@@ -36,6 +36,6 @@ export const navLink =  <>
                     ].join(" ")
                 }
             >
-                Add Phone
+                Phone
             </NavLink>
         </>

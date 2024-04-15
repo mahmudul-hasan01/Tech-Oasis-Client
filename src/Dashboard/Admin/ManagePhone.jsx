@@ -2,15 +2,16 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 
-const ManageItem = () => {
 
+const ManagePhone = () => {
     const axiosPublic = useAxiosPublic()
 
     const { data } = useQuery({
         queryKey: ['gadget'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/allGadgets`)
+            const res = await axiosPublic.get(`/gadgets`)
             return res.data
         }
     })
@@ -58,9 +59,9 @@ const ManageItem = () => {
                                         <button className="btn btn-md text-white bg-orange-500" ><FaEdit className='text-xl' /></button>
                                     </Link>
                                 </td>
-                                {/* <td>
-                                        <button className="btn btn-md text-white bg-red-500" onClick={() => handleDelete(item?._id)}><MdDeleteForever className="text-xl" /></button>
-                                    </td> */}
+                                <td>
+                                    <button className="btn btn-md text-white bg-red-500" ><MdDeleteForever className="text-xl" /></button>
+                                </td>
                             </tr>)
                         }
                     </tbody>
@@ -70,4 +71,4 @@ const ManageItem = () => {
     );
 };
 
-export default ManageItem;
+export default ManagePhone;

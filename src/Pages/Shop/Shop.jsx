@@ -28,6 +28,7 @@ const Shop = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const searchs = e.target.search.value
+        console.log(searchs);
         setSearch(searchs);
     }
 
@@ -53,10 +54,27 @@ const Shop = () => {
             </div>
             <hr /> */}
             <form onSubmit={handleSubmit} className="w-2/5 mx-auto flex">
-                <label className="input w-full h-16 input-bordered flex border border-sky-300 rounded-r-none items-center gap-2">
+                {/* <label className="input w-full h-16 input-bordered flex border border-sky-300 rounded-r-none items-center gap-2">
                     <input type="text" name="search" className="grow" placeholder="Search" />
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-                </label>
+                </label> */}
+                 <select type="text" name="search" defaultValue={'default'} className="input w-full h-16 input-bordered flex border border-sky-300 rounded-r-none items-center gap-2">
+                                <option disabled value={'default'}>Select a category</option>
+                                <option value="Phone">Laptop</option>
+                                <option value="TV & Monitors">Mobiles & Tabs</option>
+                                <option value="Watchs">Smart Watch</option>
+                                <option value="Computer & PC">Computer & PC</option>
+                                <option value="Smart Gadgets">Wired Earphone</option>
+                                <option value="Smart Gadgets">Speakers</option>
+                                <option value="Smart Gadgets">Power Cable</option>
+                                <option value="Smart Gadgets">Powerbank</option>
+                                <option value="Smart Gadgets">Neckband</option>
+                                <option value="Smart Gadgets">Power Adapter</option>
+                                <option value="Smart Gadgets">Hubs & Docks</option>
+                                <option value="Smart Gadgets">Wireless Headset</option>
+                                <option value="Smart Gadgets">Backpack</option>
+
+                            </select>
                 <button className="w-36 h-16 border-2 border-sky-300 text-sky-800 font-black rounded-r-xl hover:text-white duration-300 relative group"><span className="absolute w-12 group-hover:w-[88%] duration-300 flex group-hover:justify-start rounded-full inset-2 bg-sky-300 group-hover:bg-sky-500 group-hover:duration-500 -z-10"></span>Search</button>
             </form>
 

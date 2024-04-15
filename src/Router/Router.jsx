@@ -4,12 +4,13 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Shop from "../Pages/Shop/Shop";
-import AddPhone from "../Dashboard/AddPhone/AddPhone";
+import AddPhone from "../Dashboard/Admin/AddPhone";
 import FeaturedAllCart from "../Pages/Home/FeaturedCategories/FeaturedAllCart";
 import UpdateItem from "../Dashboard/Admin/UpdateItem";
 import Dashboard from "../Dashboard/Dashboard";
-import ManageItem from "../Dashboard/Admin/ManageItem";
 import AllUsers from "../Dashboard/Admin/AllUsers";
+import ManagePhone from "../Dashboard/Admin/ManagePhone";
+import AdminHome from "../Dashboard/Admin/AdminHome";
 
 
 export const router = createBrowserRouter([
@@ -30,10 +31,6 @@ export const router = createBrowserRouter([
             element: <FeaturedAllCart></FeaturedAllCart>
         },
         {
-            path: '/addPhone',
-            element: <AddPhone></AddPhone>
-        },
-        {
             path: '/update/:id',
             element: <UpdateItem></UpdateItem>
         },
@@ -45,12 +42,20 @@ export const router = createBrowserRouter([
         children: [
             // Admin
             {
-                path: 'manageItems',
-                element: <ManageItem></ManageItem>
+                path: 'adminHome',
+                element: <AdminHome></AdminHome>
             },
             {
                 path: 'allUsers',
                 element: <AllUsers></AllUsers>
+            },
+            {
+                path: 'addPhone',
+                element: <AddPhone></AddPhone>
+            },
+            {
+                path: 'managePhone',
+                element: <ManagePhone></ManagePhone>
             },
         ]
     },

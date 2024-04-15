@@ -12,9 +12,9 @@ const Navbar = () => {
     return (
         <div>
             <div className="navbar bg-white fixed z-50 max-w-screen-xl">
-                <div className="navbar-start">
+                <Link to={'/'} className="navbar-start">
                     <p className="text-2xl font-semibold"><span className="text-4xl  font-bold">T</span>ech Oasis</p>
-                </div>
+                </Link>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu gap-5 items-center menu-horizontal font-semibold px-1">
                         {navLink}

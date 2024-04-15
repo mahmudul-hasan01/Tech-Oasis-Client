@@ -15,8 +15,6 @@ const AddPhone = () => {
 
     const onSubmit = async (data) => {
 
-        console.log(data);
-
         const imageFile = { image: data.image[0] }
 
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -36,10 +34,9 @@ const AddPhone = () => {
                 datails: data?.datails,
                 image: res?.data?.data?.display_url
             }
-            const gadget = await axiosPublic.post('/gadgets', gadgets)
+            await axiosPublic.post('/gadgets', gadgets)
             toast.success('Add Successfully')
             reset()
-            console.log(gadget.data);
         }
     }
     // const handleAddMeal = async () => {
@@ -63,9 +60,7 @@ const AddPhone = () => {
 
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
 
-
-
-                    <div className="flex gap-5">
+                    <div className="flex flex-col lg:flex-row gap-5">
 
                         <label className="form-control w-full">
                             <div className="label">
@@ -85,7 +80,7 @@ const AddPhone = () => {
 
                     </div>
 
-                    <div className="flex gap-5">
+                    <div className="flex flex-col lg:flex-row gap-5">
 
                         <label className="form-control w-full">
                             <div className="label">
@@ -121,39 +116,6 @@ const AddPhone = () => {
 
                     </div>
 
-                    {/* <div className="flex gap-5"> */}
-
-
-
-                    {/* <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Time/Date*</span>
-                            </div>
-                            <input {...register("time")} type="time" placeholder="Time" className="input input-bordered w-full" />
-
-                        </label> */}
-
-                    {/* </div> */}
-
-                    {/* <div className="flex gap-5">
-
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Like*</span>
-                            </div>
-                            <input {...register("like")} defaultValue={0} type="text" className="input input-bordered w-full" />
-
-                        </label>
-
-                        <label className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text">Reviews*</span>
-                            </div>
-                            <input {...register("reviews")} defaultValue={0} type="text" className="input input-bordered w-full" />
-
-                        </label>
-
-                    </div> */}
 
                     <label className="form-control w-full">
                         <div className="label">
@@ -164,9 +126,11 @@ const AddPhone = () => {
                     </label>
 
                     <input {...register("image")} type="file" className="file-input bg-sky-400 block w-full max-w-xs" />
-                    <button className="btn btn-outline border border-sky-400 bg-sky-400">
-                        Submit Form
-                    </button>
+                    <div className="flex justify-center">
+                        <button className="btn btn-outline border border-sky-400 bg-sky-400">
+                            Add Phone
+                        </button>
+                    </div>
                 </form>
                 {/* <div className="flex justify-center gap-10 mt-8">
                     <button onClick={handleAddMeal} className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
