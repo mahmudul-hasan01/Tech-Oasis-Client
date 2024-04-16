@@ -16,6 +16,8 @@ import UpComing from "../Dashboard/Admin/UpComing";
 import UpComingItemUpdate from "../Dashboard/Admin/UpComingItemUpdate";
 import Profile from "../Pages/Profile/Profile";
 import ShopDetails from "../Pages/Shop/ShopDetails";
+import UserHome from "../Dashboard/User/UserHome";
+import MyBooking from "../Dashboard/User/MyBooking";
 
 
 export const router = createBrowserRouter([
@@ -81,6 +83,15 @@ export const router = createBrowserRouter([
             {
                 path: 'upComing',
                 element: <UpComing></UpComing>
+            },
+            // User
+            {
+                path: 'userHome',
+                element: <UserHome></UserHome>
+            },
+            {
+                path: 'booking',
+                element: <MyBooking></MyBooking>
             },
         ]
     },

@@ -40,7 +40,7 @@ const Shop = () => {
     const currentPost = data?.slice(firstPostIndex, lastPostIndex)
 
     return (
-        <div className="mt-5">
+        <div className="mt-6">
             {/* <div className="py-4 flex items-center justify-evenly overflow-x-auto">
                 <ShopCategory name={'Phone'} icon={FcPhoneAndroid}></ShopCategory>
                 <ShopCategory name={'Watch'} icon={IoWatch}></ShopCategory>

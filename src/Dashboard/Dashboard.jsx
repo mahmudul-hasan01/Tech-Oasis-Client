@@ -6,7 +6,7 @@ import { TbBrandBooking } from "react-icons/tb";
 import { MdOutlinePendingActions } from "react-icons/md";
 
 const Dashboard = () => {
-    const isAdmin = true
+    const isAdmin = false
     return (
         <div className="flex">
         <div className="w-64 drawer-overlay min-h-screen border-2">
