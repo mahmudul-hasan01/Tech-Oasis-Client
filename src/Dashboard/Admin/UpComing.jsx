@@ -6,19 +6,19 @@ import { MdDeleteForever } from "react-icons/md";
 import toast from "react-hot-toast";
 
 
-const ManagePhone = () => {
+const UpComing = () => {
     const axiosPublic = useAxiosPublic()
 
     const { data, refetch } = useQuery({
-        queryKey: ['gadget'],
+        queryKey: ['upcoming'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/gadgets`)
+            const res = await axiosPublic.get(`/upcoming`)
             return res.data
         }
     })
     
     const handleDelete = async (id) => {
-        const res = await axiosPublic.delete(`/gadgets/${id}`)
+        const res = await axiosPublic.delete(`/upcoming/${id}`)
         if (res.data.deletedCount > 0) {
             toast.success('Deleted Successfully')
         }
@@ -44,7 +44,7 @@ const ManagePhone = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {   data?.length > 0  && 
+                        {
                             data?.map((item, index) => <tr key={item._id}>
                                 <th>
                                     {index + 1}
@@ -64,12 +64,12 @@ const ManagePhone = () => {
                                 <td>{item?.category}</td>
                                 <td>{item?.price}</td>
                                 <td>
-                                    <Link to={`/update/${item?._id}`}>
+                                    <Link to={`/updateUpComingItems/${item?._id}`}>
                                         <button className="btn btn-md text-white bg-orange-500" ><FaEdit className='text-xl' /></button>
                                     </Link>
                                 </td>
                                 <td>
-                                    <button className="btn btn-md text-white bg-red-500" onClick={() => handleDelete(item?._id)}><MdDeleteForever className="text-xl" /></button>
+                                <button className="btn btn-md text-white bg-red-500" onClick={() => handleDelete(item?._id)}><MdDeleteForever className="text-xl" /></button>
                                 </td>
                             </tr>)
                         }
@@ -80,4 +80,4 @@ const ManagePhone = () => {
     );
 };
 
-export default ManagePhone;
+export default UpComing;

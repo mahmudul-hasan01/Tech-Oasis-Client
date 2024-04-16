@@ -27,7 +27,7 @@ export const navLink =  <>
             </NavLink>
             
             <NavLink
-                to="/addPhone"
+                to="/upComingItem"
                 className={({ isActive, isPending, isTransitioning }) =>
                     [
                         isPending ? "pending" : "",
@@ -36,6 +36,6 @@ export const navLink =  <>
                     ].join(" ")
                 }
             >
-                Phone
+                UpComing Items
             </NavLink>
         </>

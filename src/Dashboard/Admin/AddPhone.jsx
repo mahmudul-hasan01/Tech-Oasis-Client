@@ -2,15 +2,15 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 const AddPhone = () => {
 
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`
     const axiosPublic = useAxiosPublic()
-    // const axiosSecure = useAxiosSecure()
     const { user } = useAuth()
     const { register, handleSubmit, reset } = useForm()
-    // const [phone, setPhone] = useState([])
+    const [gadget, setGadget] = useState([])
 
 
     const onSubmit = async (data) => {
@@ -34,26 +34,29 @@ const AddPhone = () => {
                 datails: data?.datails,
                 image: res?.data?.data?.display_url
             }
-            await axiosPublic.post('/gadgets', gadgets)
-            toast.success('Add Successfully')
-            reset()
+            setGadget(gadgets)
+            // await axiosPublic.post('/gadgets', gadgets)
+            // toast.success('Add Successfully')
+            // reset()
         }
     }
-    // const handleAddMeal = async () => {
+    const handleAddMeal = async () => {
 
-    //     if (meals.image) {
-    //         const meal = await axiosSecure.post('/mealItem', meals)
-    //         console.log(meal.data);
-    //     }
-    // }
-    // const handleAddUpcoming = async () => {
+        if (gadget.image) {
+            const data = await axiosPublic.post('/gadgets', gadget)
+            console.log(data.data);
+            toast.success('Add Successfully')
+        }
+    }
+    const handleAddUpcoming = async () => {
 
-    //     if (meals.image) {
-    //         const meal = await axiosSecure.post('/upcoming', meals)
-    //         console.log(meal.data);
-    //     }
+        if (gadget.image) {
+            const data = await axiosPublic.post('/upcoming', gadget)
+            console.log(data.data);
+            toast.success('Add Successfully')
+        }
 
-
+    }
     return (
         <div>
             <div>
@@ -116,7 +119,6 @@ const AddPhone = () => {
 
                     </div>
 
-
                     <label className="form-control w-full">
                         <div className="label">
                             <span className="label-text">Datails*</span>
@@ -128,18 +130,18 @@ const AddPhone = () => {
                     <input {...register("image")} type="file" className="file-input bg-sky-400 block w-full max-w-xs" />
                     <div className="flex justify-center">
                         <button className="btn btn-outline border border-sky-400 bg-sky-400">
-                            Add Phone
+                            Form Submit
                         </button>
                     </div>
                 </form>
-                {/* <div className="flex justify-center gap-10 mt-8">
+                <div className="flex justify-center gap-10 mt-8">
                     <button onClick={handleAddMeal} className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
                         Add Meal
                     </button>
                     <button onClick={handleAddUpcoming} className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
                         Add Upcoming
                     </button>
-                </div> */}
+                </div>
             </div>
         </div>
     );

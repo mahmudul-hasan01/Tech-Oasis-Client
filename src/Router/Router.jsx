@@ -11,6 +11,9 @@ import Dashboard from "../Dashboard/Dashboard";
 import AllUsers from "../Dashboard/Admin/AllUsers";
 import ManagePhone from "../Dashboard/Admin/ManagePhone";
 import AdminHome from "../Dashboard/Admin/AdminHome";
+import UpComingItems from "../Pages/UpComingItems/UpComingItems";
+import UpComing from "../Dashboard/Admin/UpComing";
+import UpComingItemUpdate from "../Dashboard/Admin/UpComingItemUpdate";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +37,14 @@ export const router = createBrowserRouter([
             path: '/update/:id',
             element: <UpdateItem></UpdateItem>
         },
+        {
+            path: '/updateUpComingItems/:id',
+            element: <UpComingItemUpdate></UpComingItemUpdate>
+        },
+        {
+            path: '/upComingItem',
+            element: <UpComingItems></UpComingItems>
+        },
       ]
     },
     {
@@ -56,6 +67,10 @@ export const router = createBrowserRouter([
             {
                 path: 'managePhone',
                 element: <ManagePhone></ManagePhone>
+            },
+            {
+                path: 'upComing',
+                element: <UpComing></UpComing>
             },
         ]
     },

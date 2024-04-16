@@ -1,6 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBookBookmark, FaCartShopping, FaEnvelope, FaPhone, FaUsers, } from "react-icons/fa6";
+import { FaCartShopping, FaEnvelope, FaUsers, } from "react-icons/fa6";
 import { FaAddressCard, FaCalendar, FaHome, FaList, FaSearch } from "react-icons/fa";
+import { MdOutlinePhoneAndroid } from "react-icons/md";
+import { TbBrandBooking } from "react-icons/tb";
+import { MdOutlinePendingActions } from "react-icons/md";
 
 const Dashboard = () => {
     const isAdmin = true
@@ -12,9 +15,10 @@ const Dashboard = () => {
                     isAdmin ?
                         <>
                             <li><NavLink to='/dashboard/adminHome'><FaHome /> Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/addPhone'><FaPhone /> Add Phone</NavLink></li>
-                            <li><NavLink to='/dashboard/managePhone'><FaList /> Manage Phone</NavLink></li>
-                            <li><NavLink to='/dashboard/manageBooking'><FaBookBookmark /> Manage Booking</NavLink></li>
+                            <li><NavLink to='/dashboard/addPhone'><MdOutlinePhoneAndroid /> Add Item</NavLink></li>
+                            <li><NavLink to='/dashboard/managePhone'><FaList /> Manage Item</NavLink></li>
+                            <li><NavLink to='/dashboard/upComing'><MdOutlinePendingActions /> Up Coming Item</NavLink></li>
+                            <li><NavLink to='/dashboard/manageBooking'><TbBrandBooking /> Manage Booking</NavLink></li>
                             <li><NavLink to='/dashboard/allUsers'><FaUsers /> All Users</NavLink></li>
                         </>
                         :

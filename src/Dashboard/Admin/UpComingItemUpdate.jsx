@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
-const UpdateItem = () => {
+const UpComingItemUpdate = () => {
 
     const { register, handleSubmit} = useForm()
     const axiosPublic = useAxiosPublic()
@@ -14,7 +14,7 @@ const UpdateItem = () => {
     const { data } = useQuery({
         queryKey: ['gadget'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`/gadgets/${id}`)
+            const res = await axiosPublic.get(`/upcoming/${id}`)
             return res.data
         }
     })
@@ -36,7 +36,7 @@ const UpdateItem = () => {
 
 
     return (
-        <div>
+         <div>
             {
                 data &&
                 <div>
@@ -119,4 +119,4 @@ const UpdateItem = () => {
     );
 };
 
-export default UpdateItem;
+export default UpComingItemUpdate;

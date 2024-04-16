@@ -27,7 +27,7 @@ const Feedback = () => {
                 <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 
                     {
-                        reviews.map(review => <SwiperSlide key={review._id}>
+                        reviews?.map(review => <SwiperSlide key={review._id}>
                             <div className="px-32 my-16 flex flex-col items-center gap-6">
                                 <Rating
                                     style={{ maxWidth: 180 }}
