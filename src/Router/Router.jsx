@@ -14,6 +14,8 @@ import AdminHome from "../Dashboard/Admin/AdminHome";
 import UpComingItems from "../Pages/UpComingItems/UpComingItems";
 import UpComing from "../Dashboard/Admin/UpComing";
 import UpComingItemUpdate from "../Dashboard/Admin/UpComingItemUpdate";
+import Profile from "../Pages/Profile/Profile";
+import ShopDetails from "../Pages/Shop/ShopDetails";
 
 
 export const router = createBrowserRouter([
@@ -30,6 +32,10 @@ export const router = createBrowserRouter([
             element: <Shop></Shop>
         },
         {
+            path: '/shopDetails/:id',
+            element: <ShopDetails></ShopDetails>
+        },
+        {
             path: '/featured/:name',
             element: <FeaturedAllCart></FeaturedAllCart>
         },
@@ -44,6 +50,10 @@ export const router = createBrowserRouter([
         {
             path: '/upComingItem',
             element: <UpComingItems></UpComingItems>
+        },
+        {
+            path: '/profile',
+            element: <Profile></Profile>
         },
       ]
     },

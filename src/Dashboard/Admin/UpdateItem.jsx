@@ -6,12 +6,12 @@ import { useQuery } from "@tanstack/react-query";
 
 const UpdateItem = () => {
 
-    const { register, handleSubmit} = useForm()
+    const { register, handleSubmit } = useForm()
     const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const { id } = useParams()
 
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['gadget'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/gadgets/${id}`)
@@ -31,14 +31,16 @@ const UpdateItem = () => {
         console.log(gadgets);
         await axiosPublic.patch(`/gadgets/${id}`, gadgets)
         toast.success('Update Successfully ....')
-        navigate('/shop')
+        navigate('/dashboard/managePhone')
     }
 
-
+    if (isLoading) {
+        return <div className="w-10 h-10 flex gap-2 items-center justify-center"><div className="w-2 h-5 animate-[ping_1.4s_linear_infinite] bg-sky-600"></div><div className="w-2 h-5 animate-[ping_1.8s_linear_infinite] bg-sky-600"></div><div className="w-2 h-5 animate-[ping_2s_linear_infinite] bg-sky-600"></div></div>
+    }
     return (
         <div>
             {
-                data &&
+                data?._id &&
                 <div>
 
                     <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -71,19 +73,20 @@ const UpdateItem = () => {
                                 </div>
                                 <select {...register("category")} defaultValue={data?.category} className="select select-bordered w-full ">
                                     <option disabled value={'default'}>Select a category</option>
-                                    <option value="Phone">Laptop</option>
-                                    <option value="TV & Monitors">Mobiles & Tabs</option>
-                                    <option value="Watchs">Smart Watch</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Mobiles & Tabs">Mobiles & Tabs</option>
+                                    <option value="Smart Watch">Smart Watch</option>
                                     <option value="Computer & PC">Computer & PC</option>
-                                    <option value="Smart Gadgets">Wired Earphone</option>
-                                    <option value="Smart Gadgets">Speakers</option>
-                                    <option value="Smart Gadgets">Power Cable</option>
-                                    <option value="Smart Gadgets">Powerbank</option>
-                                    <option value="Smart Gadgets">Neckband</option>
-                                    <option value="Smart Gadgets">Power Adapter</option>
-                                    <option value="Smart Gadgets">Hubs & Docks</option>
-                                    <option value="Smart Gadgets">Wireless Headset</option>
-                                    <option value="Smart Gadgets">Backpack</option>
+                                    <option value="TV & Monitors">TV & Monitors</option>
+                                    <option value="Wired Earphone">Wired Earphone</option>
+                                    <option value="Speakers">Speakers</option>
+                                    <option value="Power Cable">Power Cable</option>
+                                    <option value="Powerbank">Powerbank</option>
+                                    <option value="Neckband">Neckband</option>
+                                    <option value="Power Adapter">Power Adapter</option>
+                                    <option value="Hubs & Docks">Hubs & Docks</option>
+                                    <option value="Wireless Headset">Wireless Headset</option>
+                                    <option value="Backpack">Backpack</option>
 
                                 </select>
 

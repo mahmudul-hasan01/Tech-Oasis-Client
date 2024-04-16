@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const FeaturedCategories = () => {
 
     const [featured, setFeatured] = useState([])
-
+    
     useEffect(() => {
         fetch('/featured.json')
             .then(res => res.json())
@@ -23,7 +23,7 @@ const FeaturedCategories = () => {
                 {
                     featured?.map(item => <Link to={`/featured/${item.name}`} key={item.id} className="card bg-base-100 shadow-xl   border-2 border-black cursor-pointer">
                         <figure className="px-10 pt-4">
-                            <img src={ item.image} alt="image" className="h-[100px] w-[100px]" />
+                            <img src={item.image} alt="image" className="h-[100px] w-[100px]" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <p>{item.name}</p>

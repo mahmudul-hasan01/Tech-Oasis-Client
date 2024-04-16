@@ -91,19 +91,19 @@ const AddPhone = () => {
                             </div>
                             <select {...register("category")} defaultValue={'default'} className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select a category</option>
-                                <option value="Phone">Laptop</option>
-                                <option value="TV & Monitors">Mobiles & Tabs</option>
-                                <option value="Watchs">Smart Watch</option>
+                                <option value="Laptop">Laptop</option>
+                                <option value="Mobiles & Tabs">Mobiles & Tabs</option>
+                                <option value="Smart Watch">Smart Watch</option>
                                 <option value="Computer & PC">Computer & PC</option>
-                                <option value="Smart Gadgets">Wired Earphone</option>
-                                <option value="Smart Gadgets">Speakers</option>
-                                <option value="Smart Gadgets">Power Cable</option>
-                                <option value="Smart Gadgets">Powerbank</option>
-                                <option value="Smart Gadgets">Neckband</option>
-                                <option value="Smart Gadgets">Power Adapter</option>
-                                <option value="Smart Gadgets">Hubs & Docks</option>
-                                <option value="Smart Gadgets">Wireless Headset</option>
-                                <option value="Smart Gadgets">Backpack</option>
+                                <option value="Wired Earphone">Wired Earphone</option>
+                                <option value="Speakers">Speakers</option>
+                                <option value="Power Cable">Power Cable</option>
+                                <option value="Powerbank">Powerbank</option>
+                                <option value="Neckband">Neckband</option>
+                                <option value="Power Adapter">Power Adapter</option>
+                                <option value="Hubs & Docks">Hubs & Docks</option>
+                                <option value="Wireless Headset">Wireless Headset</option>
+                                <option value="Backpack">Backpack</option>
 
                             </select>
 
@@ -136,7 +136,7 @@ const AddPhone = () => {
                 </form>
                 <div className="flex justify-center gap-10 mt-8">
                     <button onClick={handleAddMeal} className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
-                        Add Meal
+                        Add Gadgets
                     </button>
                     <button onClick={handleAddUpcoming} className="text-sm font-bold text-[#0d87f8] overflow-hidden shadow-lg border border-[#0d87f8] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0d87f8] before:hover:translate-x-0 before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0d87f8] relative inline-block hover:text-white py-3 px-6 rounded-full">
                         Add Upcoming
