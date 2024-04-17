@@ -32,6 +32,7 @@ const AllUsers = () => {
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Status</th>
                             <th>Role</th>
                             <th>Action</th>
                         </tr>
@@ -42,6 +43,7 @@ const AllUsers = () => {
                                 <th>{index + 1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+                                <td>{user.status}</td>
                                 <td>
                                     {
                                         user.role === 'admin' ?

@@ -23,9 +23,11 @@ const SignUp = () => {
         const userInfo = {
             name: data?.name,
             email: data?.email,
+            role: 'guest',
+            status: 'verified'
         }
         await axiosPublic.post('/users', userInfo)
-            
+
 
 
         const imageFile = { image: data.image[0] }
@@ -44,6 +46,8 @@ const SignUp = () => {
 
     const handleGoogle = async () => {
         await signInWithGoogle()
+        toast.success('Register Successfully')
+        navigate('/')
     }
 
 
