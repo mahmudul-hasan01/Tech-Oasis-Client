@@ -10,6 +10,7 @@ const MyBooking = () => {
 
     const { shopingData, refetch } = useShopCart()
     const axiosPublic = useAxiosPublic()
+    const totalPrice = shopingData.reduce((total, item) => total + item.price, 0)
 
     const handleDelete = async (id) => {
         const res = await axiosPublic.delete(`/shopingItem/${id}`)
@@ -25,6 +26,7 @@ const MyBooking = () => {
         <div>
             <div className="flex justify-around my-6">
                 <p className="text-3xl">All Item: {shopingData?.length}</p>
+                <p className="text-3xl">Total Price: {totalPrice}</p>
                 <div>
                     <button className="btn btn-outline" onClick={() => document.getElementById('my_modal_4').showModal()}>Pay</button>
                     <dialog id="my_modal_4" className="modal">

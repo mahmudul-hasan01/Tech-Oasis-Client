@@ -64,6 +64,23 @@ const CheckoutForm = () => {
             console.log(paymentIntent);
             if (paymentIntent.status === 'succeeded') {
                 toast.success(paymentIntent?.id)
+
+                const payment = {
+                    email: user?.email,
+                    price: totalPrice,
+                    transactionId: paymentIntent.id,
+                    status: 'pending',
+                    shopingIds: shopingData.map(item => item._id),
+                    productItemIds: shopingData.map(item => item.productId),
+                }
+                console.log(payment);
+                const res = await axiosPublic.post('/payment', payment)
+
+                if (res?.data?.paymentResult.insertedId) {
+                    toast.success('Payment Successfully')
+                    // navigate('/dashboard/paymentHistory')
+                    // refetch()
+                }
             }
         }
 
