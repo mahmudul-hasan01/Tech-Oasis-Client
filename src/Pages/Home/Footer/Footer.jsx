@@ -11,8 +11,8 @@ const Footer = () => {
     const textareaRef = useRef(null);
     const axiosPublic = useAxiosPublic()
 
-    
-    const handleSubmit =async (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const textareaValue = textareaRef.current.value;
 
@@ -22,7 +22,7 @@ const Footer = () => {
             name: user?.displayName
         }
 
-        await axiosPublic.post('/reviews',ratingData)
+        await axiosPublic.post('/reviews', ratingData)
         toast.success('Review Add Successfully')
     }
 
@@ -60,16 +60,16 @@ const Footer = () => {
                 </aside>
             </footer>
 
-            <form onSubmit={handleSubmit}>
-                <textarea  ref={textareaRef} name="details" className="textarea textarea-bordered" placeholder="Bio"></textarea>
+            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
                 <Rating
                     style={{ maxWidth: 180 }}
                     value={rating}
                     onChange={setRating}
                     isRequired
                 />
+                <textarea ref={textareaRef} name="details" className="textarea w-96 textarea-bordered" placeholder="Bio"></textarea>
 
-                <button className="btn">Submit</button>
+                <button className="relative h-14 w-32 origin-top transform rounded-lg border-2 border-sky-500 text-xl text-sky-500 before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-white hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-sky-500">Review</button>
             </form>
 
         </div>

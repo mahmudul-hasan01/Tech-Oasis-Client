@@ -2,12 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { FaUsers } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const AllUsers = () => {
 
     const axiosPublic = useAxiosPublic()
 
-    const { data: users = [] } = useQuery({
+    const { data: users = [], refetch } = useQuery({
         queryKey: ['allUsers'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/users`)
@@ -15,7 +16,18 @@ const AllUsers = () => {
         }
     })
     
-   
+   const handleDelete = async (id) => {
+        await axiosPublic.delete(`/users/${id}`)
+        toast.success('Deleted Successfully')
+        refetch()
+    }
+
+    const handleMakeAdmin =async (id) => {
+        await axiosPublic.patch(`/users/admin/${id}`)
+        toast.success('Updated Successfully')
+        refetch()
+    }
+    
 
     return (
         <div>
@@ -49,11 +61,11 @@ const AllUsers = () => {
                                         user.role === 'admin' ?
                                             'Admin'
                                             :
-                                            <button className="btn btn-md text-white bg-orange-500"  ><FaUsers className='text-xl' /></button>
+                                            <button onClick={() => handleMakeAdmin(user._id)} className="btn btn-md text-white bg-orange-500"  ><FaUsers className='text-xl' /></button>
                                     }
                                 </td>
                                 <td>
-                                    <button className="btn btn-md text-white bg-red-500" ><MdDeleteForever className="text-xl" /></button>
+                                    <button onClick={() => handleDelete(user._id)} className="btn btn-md text-white bg-red-500" ><MdDeleteForever className="text-xl" /></button>
                                 </td>
                             </tr>)
                         }
