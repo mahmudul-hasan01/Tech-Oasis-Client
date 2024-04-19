@@ -1,15 +1,17 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form"
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "../../../public/login.json";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
     const { signIn, signInWithGoogle } = useAuth()
     const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
 
     const { register, handleSubmit } = useForm()
 
@@ -18,7 +20,15 @@ const Login = () => {
         navigate('/')
     }
     const handleGoogle =async () => {
-        await signInWithGoogle()
+        const data  = await signInWithGoogle()
+        const userInfo = {
+            name: data?.user?.displayName,
+            email: data?.user?.email,
+            role: 'guest',
+            status: 'verified'
+        }
+        await axiosPublic.post('/users', userInfo)
+        toast.success('Login Successfully')
         navigate('/')
     }
     return (

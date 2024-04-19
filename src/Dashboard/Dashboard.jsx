@@ -4,15 +4,18 @@ import { FaAddressCard, FaCalendar, FaHome, FaList, FaSearch } from "react-icons
 import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { MdOutlinePendingActions } from "react-icons/md";
+import useRole from "../Hooks/useRole";
 
 const Dashboard = () => {
-    const isAdmin = true
+
+    const {isAdmin, isLoading} = useRole()
+
     return (
         <div className="flex">
         <div className="w-64 drawer-overlay min-h-screen border-2">
             <ul className="menu space-y-5 mt-6">
                 {
-                    isAdmin ?
+                    isAdmin === 'admin' ?
                         <>
                             <li><NavLink to='/dashboard/adminHome'><FaHome /> Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/addPhone'><MdOutlinePhoneAndroid /> Add Item</NavLink></li>

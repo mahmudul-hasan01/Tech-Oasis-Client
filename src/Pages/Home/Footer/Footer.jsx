@@ -27,7 +27,7 @@ const Footer = () => {
     }
 
     return (
-        <div className="flex justify-center gap-20">
+        <div className="flex flex-col-reverse lg:flex-row justify-center lg:gap-20 mt-10">
 
             <footer className="flex flex-col justify-around gap-5 mt-10 py-8">
                 <nav className="text-lg">
@@ -60,14 +60,14 @@ const Footer = () => {
                 </aside>
             </footer>
 
-            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4 lg:mb-5">
                 <Rating
                     style={{ maxWidth: 180 }}
                     value={rating}
                     onChange={setRating}
                     isRequired
                 />
-                <textarea ref={textareaRef} name="details" className="textarea w-96 textarea-bordered" placeholder="Bio"></textarea>
+                <textarea ref={textareaRef} name="details" className="textarea w-96 textarea-bordered" placeholder="Details"></textarea>
 
                 <button className="relative h-14 w-32 origin-top transform rounded-lg border-2 border-sky-500 text-xl text-sky-500 before:absolute before:top-0 before:block before:h-0 before:w-full before:duration-500 hover:text-white hover:before:absolute hover:before:left-0 hover:before:-z-10 hover:before:h-full hover:before:bg-sky-500">Review</button>
             </form>
