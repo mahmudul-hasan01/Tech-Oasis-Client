@@ -1,7 +1,33 @@
+import { Rating } from "@smastrom/react-rating";
+import { useRef, useState } from "react";
+import useAuth from "../../../Hooks/useAuth";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const Footer = () => {
+
+    const { user } = useAuth()
+    const [rating, setRating] = useState(0);
+    const textareaRef = useRef(null);
+    const axiosPublic = useAxiosPublic()
+
+    
+    const handleSubmit =async (e) => {
+        e.preventDefault()
+        const textareaValue = textareaRef.current.value;
+
+        const ratingData = {
+            rating: rating,
+            details: textareaValue,
+            name: user?.displayName
+        }
+
+        await axiosPublic.post('/reviews',ratingData)
+        toast.success('Review Add Successfully')
+    }
+
     return (
-        <div>
+        <div className="flex justify-center gap-20">
 
             <footer className="flex flex-col justify-around gap-5 mt-10 py-8">
                 <nav className="text-lg">
@@ -33,6 +59,18 @@ const Footer = () => {
                     <p>&copy; 2024 Tech-Oasis. All Rights Reserved.</p>
                 </aside>
             </footer>
+
+            <form onSubmit={handleSubmit}>
+                <textarea  ref={textareaRef} name="details" className="textarea textarea-bordered" placeholder="Bio"></textarea>
+                <Rating
+                    style={{ maxWidth: 180 }}
+                    value={rating}
+                    onChange={setRating}
+                    isRequired
+                />
+
+                <button className="btn">Submit</button>
+            </form>
 
         </div>
     );

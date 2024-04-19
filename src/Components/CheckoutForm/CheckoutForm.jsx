@@ -7,8 +7,8 @@ import useAuth from "../../Hooks/useAuth";
 
 const CheckoutForm = () => {
 
-    const {shopingData} = useShopCart()
-    const {user} = useAuth()
+    const { shopingData, refetch } = useShopCart()
+    const { user } = useAuth()
     const [clientSecret, setcClientSecret] = useState('')
     const stripe = useStripe();
     const elements = useElements();
@@ -22,7 +22,7 @@ const CheckoutForm = () => {
                     setcClientSecret(res?.data?.clientSecret)
                 })
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleSubmit = async (e) => {
@@ -79,7 +79,7 @@ const CheckoutForm = () => {
                 if (res?.data?.paymentResult.insertedId) {
                     toast.success('Payment Successfully')
                     // navigate('/dashboard/paymentHistory')
-                    // refetch()
+                    refetch()
                 }
             }
         }
@@ -104,11 +104,11 @@ const CheckoutForm = () => {
                     },
                 }}
             />
-           <div className="flex justify-center">
-           <button className="btn btn-neutral btn-md mt-8" type="submit" disabled={!stripe || !clientSecret}>
-                Pay
-            </button>
-           </div>
+            <div className="flex justify-center">
+                <button className="btn btn-neutral btn-md mt-8" type="submit" disabled={!stripe || !clientSecret}>
+                    Pay
+                </button>
+            </div>
         </form>
     );
 };
