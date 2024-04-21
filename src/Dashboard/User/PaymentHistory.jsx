@@ -11,10 +11,9 @@ const PaymentHistory = () => {
         queryKey: ['paymentHistory', user?.email],
         queryFn: async () => {
             const res = await axiosPublic.get(`/payment/${user?.email}`)
-            return res.data
+            return res.data.data
         }
     })
-    console.log(payments);
 
     return (
         <div>

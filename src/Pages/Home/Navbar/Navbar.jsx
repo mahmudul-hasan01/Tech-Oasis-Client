@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { CgProfile } from "react-icons/cg";
 import useShopCart from "../../../Hooks/useShopCart";
+import useRole from "../../../Hooks/useRole";
 
 
 
@@ -11,6 +12,7 @@ const Navbar = () => {
 
     const { user, logOut } = useAuth()
     const { shopingData } = useShopCart()
+    const {isAdmin} = useRole()
 
     return (
         <div>
@@ -53,12 +55,21 @@ const Navbar = () => {
                                         >
                                             Profile
                                         </Link>
-                                        <Link
-                                            to='/dashboard'
-                                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
-                                        >
-                                            Dashoard
-                                        </Link>
+                                        {   isAdmin ?
+                                            <Link
+                                                to='/dashboard/adminHome'
+                                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                            >
+                                                Dashoard
+                                            </Link>
+                                            :
+                                            <Link
+                                                to='/dashboard/userHome'
+                                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                            >
+                                                Dashoard
+                                            </Link>
+                                        }
                                         <p onClick={() => logOut()} className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                                         >
                                             Logout

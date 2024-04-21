@@ -34,7 +34,7 @@ const Shop = () => {
         queryKey: ['gadgets'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/gadgets?search=${search}`)
-            return res.data
+            return res.data.result
         }
     })
     const currentPost = data?.slice(firstPostIndex, lastPostIndex)

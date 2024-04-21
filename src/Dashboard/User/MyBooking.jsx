@@ -9,6 +9,7 @@ import CheckoutForm from "../../Components/CheckoutForm/CheckoutForm";
 const MyBooking = () => {
 
     const { shopingData, refetch } = useShopCart()
+    
     const axiosPublic = useAxiosPublic()
     const totalPrice = shopingData.reduce((total, item) => total + item.price, 0)
 
