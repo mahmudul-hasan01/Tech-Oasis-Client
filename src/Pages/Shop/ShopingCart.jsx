@@ -7,6 +7,8 @@ import useAuth from "../../Hooks/useAuth";
 
 const ShopingCart = ({ phone }) => {
 
+    console.log(phone._id);
+
     const { user } = useAuth()
     const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()

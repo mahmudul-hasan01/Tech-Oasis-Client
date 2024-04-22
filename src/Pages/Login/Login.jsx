@@ -19,27 +19,30 @@ const Login = () => {
         await signIn(data?.email, data?.password)
         navigate('/')
     }
-    const handleGoogle =async () => {
-        const data  = await signInWithGoogle()
+    const handleGoogle = async () => {
+        const data = await signInWithGoogle()
         const userInfo = {
             name: data?.user?.displayName,
             email: data?.user?.email,
             role: 'guest',
             status: 'verified'
         }
-        await axiosPublic.post('/users', userInfo)
-        toast.success('Login Successfully')
-        navigate('/')
+        axiosPublic.post('/users', userInfo)
+            .then((data) => {
+                console.log(data);
+                toast.success('Login Successfully')
+                navigate('/')
+            })
     }
     return (
         <div>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                    <Lottie animationData={groovyWalkAnimation} />
+                        <Lottie animationData={groovyWalkAnimation} />
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <p className="text-center text-3xl font-semibold pt-6">Login</p>
+                        <p className="text-center text-3xl font-semibold pt-6">Login</p>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">

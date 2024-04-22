@@ -21,13 +21,11 @@ const Dashboard = () => {
                             <li><NavLink to='/dashboard/addPhone'><MdOutlinePhoneAndroid /> Add Item</NavLink></li>
                             <li><NavLink to='/dashboard/managePhone'><FaList /> Manage Item</NavLink></li>
                             <li><NavLink to='/dashboard/upComing'><MdOutlinePendingActions /> Up Coming Item</NavLink></li>
-                            <li><NavLink to='/dashboard/manageBooking'><TbBrandBooking /> Manage Booking</NavLink></li>
                             <li><NavLink to='/dashboard/allUsers'><FaUsers /> All Users</NavLink></li>
                         </>
                         :
                         <>
                             <li><NavLink to='/dashboard/userHome'><FaHome /> User Home</NavLink></li>
-                            <li><NavLink to='/dashboard/cart'><FaCartShopping /> My Cart </NavLink></li>
                             <li><NavLink to='/dashboard/paymentHistory'><FaCalendar /> Payment History</NavLink></li>
                             <li><NavLink to='/dashboard/review'><FaAddressCard /> Review</NavLink></li>
                             <li><NavLink to='/dashboard/booking'><FaList /> My Booking</NavLink></li>
