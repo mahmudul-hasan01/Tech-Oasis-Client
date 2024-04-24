@@ -97,9 +97,9 @@ const AdminHome = () => {
     ];
 
     return (
-        <div>
+        <div className="overflow-x-auto">
             <h1>Hi, Welcome </h1>
-            <h1>
+            <h1 className="mb-8">
                 {
                     user?.displayName ? user?.displayName : 'Back'
                 }

@@ -1,5 +1,4 @@
 import { navLink } from "./NavLink";
-import image from '../../../assets/image/Phone/EoY-2022-Best-Phones-on-leather.jpg'
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import { CgProfile } from "react-icons/cg";
