@@ -43,9 +43,9 @@ const ShopingCart = ({ phone }) => {
             <div className="flex items-center justify-center flex-wrap gap-6 text-sm md:text-base">
                 <Link to={`/shopDetails/${phone._id}`} className="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-600 duration-300 hover:scale-105 text-white font-semibold font-sans">Details</Link>
 
-                <button onClick={handleAddItem} className="px-4 py-2 rounded-lg border border-sky-500 hover:bg-sky-600 hover:text-white duration-300 hover:scale-105  font-semibold font-sans">
+                {/* <button onClick={handleAddItem} className="px-4 py-2 rounded-lg border border-sky-500 hover:bg-sky-600 hover:text-white duration-300 hover:scale-105  font-semibold font-sans">
                     Add to Cart
-                </button>
+                </button> */}
             </div>
         </div>
     );

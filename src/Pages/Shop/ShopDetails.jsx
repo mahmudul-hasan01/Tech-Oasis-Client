@@ -32,7 +32,7 @@ const ShopDetails = () => {
                     <div className="flex flex-wrap items-center justify-between">
                         <p>{data?.datails}</p>
                     </div>
-                    <div><button className="rounded-full border border-[#0d87f8] px-4 py-2 text-sm text-[#0d87f8] hover:bg-[#0d87f8] hover:text-white  duration-300 dark:hover:bg-transparent dark:hover:text-[#0d87f8] dark:hover:drop-shadow-[0px_0px_2px_#0d87f8]">Add To Cart</button></div>
+                    {/* <div><button className="rounded-full border border-[#0d87f8] px-4 py-2 text-sm text-[#0d87f8] hover:bg-[#0d87f8] hover:text-white  duration-300 dark:hover:bg-transparent dark:hover:text-[#0d87f8] dark:hover:drop-shadow-[0px_0px_2px_#0d87f8]">Add To Cart</button></div> */}
                 </div>
             </div>
         </div>
