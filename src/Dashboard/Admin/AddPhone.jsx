@@ -46,6 +46,7 @@ const AddPhone = () => {
             const data = await axiosPublic.post('/gadgets', gadget)
             console.log(data.data);
             toast.success('Add Successfully')
+            reset()
         }
     }
     const handleAddUpcoming = async () => {
@@ -54,6 +55,7 @@ const AddPhone = () => {
             const data = await axiosPublic.post('/upcoming', gadget)
             console.log(data.data);
             toast.success('Add Successfully')
+            reset()
         }
 
     }
@@ -67,7 +69,7 @@ const AddPhone = () => {
 
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text">Item Name*</span>
+                                <span className="label-text">Phone Name*</span>
                             </div>
                             <input {...register("name")} type="text" placeholder="Name" className="input input-bordered w-full " />
 
@@ -75,7 +77,7 @@ const AddPhone = () => {
 
                         <label className="form-control w-full">
                             <div className="label">
-                                <span className="label-text">Rating*</span>
+                                <span className="label-text">Rating</span>
                             </div>
                             <input {...register("rating")} type="text" placeholder="Rating" className="input input-bordered w-full" />
 
@@ -91,22 +93,45 @@ const AddPhone = () => {
                             </div>
                             <select {...register("category")} defaultValue={'default'} className="select select-bordered w-full ">
                                 <option disabled value={'default'}>Select a category</option>
-                                <option value="Laptop">Laptop</option>
-                                <option value="Mobiles & Tabs">Mobiles & Tabs</option>
-                                <option value="Smart Watch">Smart Watch</option>
-                                <option value="Computer & PC">Computer & PC</option>
-                                <option value="Wired Earphone">Wired Earphone</option>
-                                <option value="Speakers">Speakers</option>
-                                <option value="Power Cable">Power Cable</option>
-                                <option value="Powerbank">Powerbank</option>
-                                <option value="Neckband">Neckband</option>
-                                <option value="Power Adapter">Power Adapter</option>
-                                <option value="Hubs & Docks">Hubs & Docks</option>
-                                <option value="Wireless Headset">Wireless Headset</option>
-                                <option value="Backpack">Backpack</option>
+
+                                <option value='SAMSUNG'>SAMSUNG</option>
+                                <option value='APPLE'>APPLE</option>
+                                <option value='HUAWEI'>HUAWEI</option>
+                                <option value='NOKIA'>NOKIA</option>
+                                <option value='SONY'>SONY</option>
+                                <option value='LG'>LG</option>
+                                <option value='HTC'>HTC</option>
+                                <option value='MOTOROLA'>MOTOROLA</option>
+                                <option value='LENOVO'>LENOVO</option>
+                                <option value='XIAOMI'>XIAOMI</option>
+                                <option value='GOOGLE'>GOOGLE</option>
+                                <option value='HONOR'>HONOR</option>
+                                <option value='OPPO'>OPPO</option>
+                                <option value='REALME'>REALME</option>
+                                <option value='ONEPLUS'>ONEPLUS</option>
+                                <option value='VIVO'>VIVO</option>
+                                <option value='MEIZU'>MEIZU</option>
+                                <option value='BLACKBERRY'>BLACKBERRY</option>
+                                <option value='ASUS'>ASUS</option>
+                                <option value='ALCATEL'>ALCATEL</option>
+                                <option value='ZTE'>ZTE</option>
+                                <option value='MICROSOFT'>MICROSOFT</option>
+                                <option value='VODAFONE'>VODAFONE</option>
+                                <option value='ENERGIZER'>ENERGIZER</option>
+                                <option value='CAT'>CAT</option>
+                                <option value='SHARP'>SHARP</option>
+                                <option value='MICROMAX'>MICROMAX</option>
+                                <option value='NOTHING'>NOTHING</option>
+                                <option value='ULEFONE'>ULEFONE</option>
+                                <option value='TECNO'>TECNO</option>
+                                <option value='DOOGEE'>DOOGEE</option>
+                                <option value='BLACKVIEW'>BLACKVIEW</option>
+                                <option value='CUBOT'>CUBOT</option>
+                                <option value='OUKITEL'>OUKITEL</option>
+                                <option value='ITEL'>ITEL</option>
+                                <option value='TCL'>TCL</option>
 
                             </select>
-
                         </label>
 
                         <label className="form-control w-full">
