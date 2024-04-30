@@ -23,7 +23,7 @@ export const navLink = <>
             ].join(" ")
         }
     >
-        Shop Now
+        Phones
     </NavLink>
 
     <NavLink

@@ -60,8 +60,8 @@ const FeaturedCategories = () => {
             </div> */}
 
             <div className="grid grid-cols-12 gap-6">
-                <div className="col-span-2">
-                    <h1 className="underline text-3xl mb-4 text-center">Phone Name</h1>
+                <div className="col-span-4 lg:col-span-2">
+                    <h1 className="underline hidden lg:block text-3xl mb-4 text-center">Phone Name</h1>
                     {
                         // to={`/featured/${item.name}`}
                         featured?.map(item => <div onClick={() => handleClick(item?.name)} key={item.id} className="card mb-3 bg-base-100 shadow-xl border-2 border-black cursor-pointer">
@@ -72,7 +72,7 @@ const FeaturedCategories = () => {
                     }
                 </div>
 
-                <div className="col-span-10">
+                <div className="col-span-8 lg:col-span-10">
                     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         {
                             data?.length > 0 ? data?.map(phone => <ShopingCart key={phone._id} phone={phone}></ShopingCart>)
