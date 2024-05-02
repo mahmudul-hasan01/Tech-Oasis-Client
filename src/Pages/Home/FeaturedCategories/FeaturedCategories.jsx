@@ -22,7 +22,7 @@ const FeaturedCategories = () => {
     const [search, setSearch] = useState('')
     const [categoryData, setCategoryData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage, setPostsParPage] = useState(6)
+    const [postsPerPage, setPostsParPage] = useState(8)
 
     const lastPostIndex = currentPage * postsPerPage
     const firstPostIndex = lastPostIndex - postsPerPage
@@ -46,7 +46,7 @@ const FeaturedCategories = () => {
             return res.data
         }
     })
-    // const currentPost = data?.slice(firstPostIndex, lastPostIndex)
+    const currentPost = data?.slice(firstPostIndex, lastPostIndex)
 
 
 
@@ -73,9 +73,9 @@ const FeaturedCategories = () => {
                 </div>
 
                 <div className="col-span-8 lg:col-span-10">
-                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                         {
-                            data?.length > 0 ? data?.map(phone => <ShopingCart key={phone._id} phone={phone}></ShopingCart>)
+                            data?.length > 0 ? currentPost?.map(phone => <ShopingCart key={phone._id} phone={phone}></ShopingCart>)
                                 :
                                 <div className="col-span-10 flex w-full text-center justify-center items-center text-5xl font-semibold">
                                     <p>No Data Available</p>
@@ -84,7 +84,7 @@ const FeaturedCategories = () => {
                     </div>
                 </div>
             </div>
-            {/* <Paginations totalPosts={data?.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}></Paginations> */}
+            <Paginations totalPosts={data?.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}></Paginations>
         </div>
     );
 };

@@ -19,6 +19,7 @@ import ShopDetails from "../Pages/Shop/ShopDetails";
 import UserHome from "../Dashboard/User/UserHome";
 import MyBooking from "../Dashboard/User/MyBooking";
 import PaymentHistory from "../Dashboard/User/PaymentHistory";
+import UpcomingDetails from "../Pages/UpComingItems/UpcomingDetails";
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
         {
             path: '/shopDetails/:id',
             element: <ShopDetails></ShopDetails>
+        },
+        {
+            path: '/upComingDetails/:id',
+            element: <UpcomingDetails></UpcomingDetails>
         },
         {
             path: '/featured/:name',
