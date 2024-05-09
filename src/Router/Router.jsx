@@ -20,6 +20,7 @@ import UserHome from "../Dashboard/User/UserHome";
 import MyBooking from "../Dashboard/User/MyBooking";
 import PaymentHistory from "../Dashboard/User/PaymentHistory";
 import UpcomingDetails from "../Pages/UpComingItems/UpcomingDetails";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -67,7 +68,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute>  <Dashboard></Dashboard> </PrivateRoute>,
         children: [
             // Admin
             {
