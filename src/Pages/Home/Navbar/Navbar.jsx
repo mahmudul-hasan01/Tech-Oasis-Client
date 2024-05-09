@@ -54,20 +54,20 @@ const Navbar = () => {
                                         >
                                             Profile
                                         </Link>
-                                        {   isAdmin ?
+                                        {   isAdmin == 'admin' &&
                                             <Link
                                                 to='/dashboard/adminHome'
                                                 className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                                             >
                                                 Dashoard
                                             </Link>
-                                            :
-                                            <Link
-                                                to='/dashboard/userHome'
-                                                className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
-                                            >
-                                                Dashoard
-                                            </Link>
+                                            // :
+                                            // <Link
+                                            //     to='/dashboard/userHome'
+                                            //     className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                            // >
+                                            //     Dashoard
+                                            // </Link>
                                         }
                                         <p onClick={() => logOut()} className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                                         >

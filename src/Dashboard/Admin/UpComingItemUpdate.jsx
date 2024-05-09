@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const UpComingItemUpdate = () => {
 
-    const { register, handleSubmit} = useForm()
+    const { register, handleSubmit } = useForm()
     const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const { id } = useParams()
@@ -36,7 +36,7 @@ const UpComingItemUpdate = () => {
 
 
     return (
-         <div>
+        <div>
             {
                 data &&
                 <div>
@@ -71,19 +71,42 @@ const UpComingItemUpdate = () => {
                                 </div>
                                 <select {...register("category")} defaultValue={data?.category} className="select select-bordered w-full ">
                                     <option disabled value={'default'}>Select a category</option>
-                                    <option value="Phone">Laptop</option>
-                                    <option value="TV & Monitors">Mobiles & Tabs</option>
-                                    <option value="Watchs">Smart Watch</option>
-                                    <option value="Computer & PC">Computer & PC</option>
-                                    <option value="Smart Gadgets">Wired Earphone</option>
-                                    <option value="Smart Gadgets">Speakers</option>
-                                    <option value="Smart Gadgets">Power Cable</option>
-                                    <option value="Smart Gadgets">Powerbank</option>
-                                    <option value="Smart Gadgets">Neckband</option>
-                                    <option value="Smart Gadgets">Power Adapter</option>
-                                    <option value="Smart Gadgets">Hubs & Docks</option>
-                                    <option value="Smart Gadgets">Wireless Headset</option>
-                                    <option value="Smart Gadgets">Backpack</option>
+                                    <option value='SAMSUNG'>SAMSUNG</option>
+                                    <option value='APPLE'>APPLE</option>
+                                    <option value='HUAWEI'>HUAWEI</option>
+                                    <option value='NOKIA'>NOKIA</option>
+                                    <option value='SONY'>SONY</option>
+                                    <option value='LG'>LG</option>
+                                    <option value='HTC'>HTC</option>
+                                    <option value='MOTOROLA'>MOTOROLA</option>
+                                    <option value='LENOVO'>LENOVO</option>
+                                    <option value='XIAOMI'>XIAOMI</option>
+                                    <option value='GOOGLE'>GOOGLE</option>
+                                    <option value='HONOR'>HONOR</option>
+                                    <option value='OPPO'>OPPO</option>
+                                    <option value='REALME'>REALME</option>
+                                    <option value='ONEPLUS'>ONEPLUS</option>
+                                    <option value='VIVO'>VIVO</option>
+                                    <option value='MEIZU'>MEIZU</option>
+                                    <option value='BLACKBERRY'>BLACKBERRY</option>
+                                    <option value='ASUS'>ASUS</option>
+                                    <option value='ALCATEL'>ALCATEL</option>
+                                    <option value='ZTE'>ZTE</option>
+                                    <option value='MICROSOFT'>MICROSOFT</option>
+                                    <option value='VODAFONE'>VODAFONE</option>
+                                    <option value='ENERGIZER'>ENERGIZER</option>
+                                    <option value='CAT'>CAT</option>
+                                    <option value='SHARP'>SHARP</option>
+                                    <option value='MICROMAX'>MICROMAX</option>
+                                    <option value='NOTHING'>NOTHING</option>
+                                    <option value='ULEFONE'>ULEFONE</option>
+                                    <option value='TECNO'>TECNO</option>
+                                    <option value='DOOGEE'>DOOGEE</option>
+                                    <option value='BLACKVIEW'>BLACKVIEW</option>
+                                    <option value='CUBOT'>CUBOT</option>
+                                    <option value='OUKITEL'>OUKITEL</option>
+                                    <option value='ITEL'>ITEL</option>
+                                    <option value='TCL'>TCL</option>
 
                                 </select>
 

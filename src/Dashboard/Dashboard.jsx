@@ -12,7 +12,6 @@ const Dashboard = () => {
     const { isAdmin, isLoading } = useRole()
 
     const [open, setOpen] = useState(false)
-    console.log(open);
     // const handleOpen = () => {
     //     setOpen(true)
     // }

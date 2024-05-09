@@ -31,7 +31,7 @@ const ShopingCart = ({ phone }) => {
 
 
     return (
-        <Link to={`/shopDetails/${phone._id}`} className="px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white">
+        <Link to={`/shopDetails/${phone._id}`} className="border px-4 py-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-6 my-20 mx-auto bg-white">
             <div className="flex justify-center w-full h-48 lg:h-[280px] relative">
                 <img className="rounded-lg bg-black/40 w-[200px] h-full" src={phone.image} />
             </div>

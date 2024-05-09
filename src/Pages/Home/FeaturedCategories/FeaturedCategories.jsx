@@ -28,12 +28,12 @@ const FeaturedCategories = () => {
     const firstPostIndex = lastPostIndex - postsPerPage
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const searchs = e.target.search.value
-        console.log(searchs);
-        setSearch(searchs);
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     const searchs = e.target.search.value
+    //     console.log(searchs);
+    //     setSearch(searchs);
+    // }
 
     const handleClick = (featuredData) => {
         setCategoryData(featuredData);
@@ -61,7 +61,7 @@ const FeaturedCategories = () => {
 
             <div className="grid grid-cols-12 gap-6">
                 <div className="col-span-4 lg:col-span-2">
-                    <h1 className="underline hidden lg:block text-3xl mb-4 text-center">Phone Name</h1>
+                    <h1 className="underline hidden lg:block text-3xl mb-4 text-center">Brand Name</h1>
                     {
                         // to={`/featured/${item.name}`}
                         featured?.map(item => <div onClick={() => handleClick(item?.name)} key={item.id} className="card mb-3 bg-base-100 shadow-xl border-2 border-black cursor-pointer">
@@ -78,7 +78,7 @@ const FeaturedCategories = () => {
                             data?.length > 0 ? currentPost?.map(phone => <ShopingCart key={phone._id} phone={phone}></ShopingCart>)
                                 :
                                 <div className="col-span-10 flex w-full text-center justify-center items-center text-5xl font-semibold">
-                                    <p>No Data Available</p>
+                                    <p>No Phone Available</p>
                                 </div>
                         }
                     </div>
